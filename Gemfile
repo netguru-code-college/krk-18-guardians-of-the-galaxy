@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.5.3'
 
 gem 'rails', '~> 5.2.0'
+gem 'httparty'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
