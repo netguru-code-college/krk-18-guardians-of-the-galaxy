@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'mini_racer', platforms: :ruby
+
 
 group :development, :test do
   gem 'pry-rails'
