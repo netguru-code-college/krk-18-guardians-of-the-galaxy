@@ -7,9 +7,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <div id="main-container" class="container">
+    <div class="row">
+    <div class="col-md-9">
+        <div class="text-center">
+          <%= yield %>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="btn-group btn-group-xs">
+      <button>
+        <%= link_to("Sing in", new_user_session_url, class: 'btn btn-danger') %>
+      </button>
+      <button>
+        <%= link_to("Registration", new_user_registration_url, class: 'btn btn-danger') %>
+      </button>
+      </div>
+      </div>
+    </div>
+    </div>
   </body>
 </html>
