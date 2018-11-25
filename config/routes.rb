@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :posts
   get 'users/:id', to: 'users#index'
   get 'profile', to: 'users#profile'
+  get 'match', to: 'users#match'
 
 end
