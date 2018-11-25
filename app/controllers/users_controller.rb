@@ -9,4 +9,6 @@ class UsersController < ApplicationController
 
     @potential_matches = UserServices::FindPotentialMatches.new(current_user.id).call
   end
+  def match
+  end
 end
