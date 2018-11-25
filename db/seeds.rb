@@ -19,6 +19,15 @@ artists = Artist.all
   )
 end
 
-10.times do
+20.times do
   users.sample.artists << artists.sample
+end
+
+3.times do
+  Conversation.create!(
+    first_user_id: users.sample,
+    second_user_id: users.sample,
+    first_consent: true,
+    second_consent: true
+  )
 end
