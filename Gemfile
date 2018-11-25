@@ -14,6 +14,9 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'devise'
 gem 'mini_racer', platforms: :ruby
+gem 'omniauth-spotify'
+gem 'omniauth'
+
 
 group :development, :test do
   gem 'pry-rails'
