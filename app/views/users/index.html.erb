@@ -1,15 +1,10 @@
-<h1>Hello: <%= @user.email %> </h1>
+<h1><%= @user.email %> </h1>
 <p>
 
-  <% if @user.artists.empty? %>No fav artists<% end %>
-
+  <% if @user.artists.empty? %>This user has no Favourite Artists<% end %>
+ <p> Favourite Artists: </p>
         <% @user.artists.each do |artist| %>
-        <%= artist.name %>
-
-        <% artist.users.each do |user| %>
-        <%= user.email %>
-        <%end%><br>
-
+        <p> <%= artist.name %> </p>
         <% end %>
 
 <p>
