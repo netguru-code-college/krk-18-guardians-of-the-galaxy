@@ -22,4 +22,5 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path %><br>
+<%= current_user.email if user_signed_in? %>
