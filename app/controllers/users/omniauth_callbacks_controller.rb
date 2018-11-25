@@ -6,6 +6,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     user = User.find_or_create_by(email: auth.info[:email] ) do |new_user|
       new_user.password = SecureRandom.hex
       new_user.access_token = auth.credentials[:token]
+      new_user.name = auth.info[:name]
+      new_user.nickname = auth.info[:nickname]
+      new_user.image_url = auth.info[:image_url]
     end
     sign_in :user, user
     redirect_to root_path
