@@ -1,8 +1,16 @@
 <h1>Hello: <%= current_user.email %> </h1>
 
+<% if @user.artists.empty?%>
+  <p> You don't have any Favourite Artists added </p>
+<% else %>
+  <p> Your Favourite Artists:</p>
+  <% @user.artists.each do |fav| %>
+  <p><%= fav.name %></p>
+  <% end %>
+<% end %>
 
 <% if @potential_matches.empty? %>No matchess<% end %>
-
+      <p> Your potential matches: </p>
       <% @potential_matches.each do |match| %>
-      <%= match.email %>
+      <p><%= match.email %></p>
 <% end %>
