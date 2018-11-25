@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
 
   has_and_belongs_to_many :artists
+  def conversations
+    Conversation.where("first_user = ? OR second_user = ?", self.id, self.id)
+  end
 end

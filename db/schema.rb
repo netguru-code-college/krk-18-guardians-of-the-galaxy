@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2018_11_25_125218) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer "first_user_id"
+    t.integer "second_user_id"
+    t.boolean "first_consent"
+    t.boolean "second_consent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "name"
     t.string "title"

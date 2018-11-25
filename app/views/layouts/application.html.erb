@@ -13,20 +13,29 @@
   <body>
     <div id="main-container" class="container">
     <div class="row">
-    <div class="col-md-9">
-        <div class="text-center">
-          <%= yield %>
-        </div>
-    </div>
+      <div class="col-md-9">
+      </div>
     <div class="col-md-3">
       <div class="btn-group btn-group-xs">
-      <button>
+        <% if user_signed_in?%>
+
+            <%= link_to('Profile', profile_url, class: 'btn btn-danger') %>
+             <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger') %>
+
+       <% else %>
+
         <%= link_to("Sing in", new_user_session_url, class: 'btn btn-danger') %>
-      </button>
-      <button>
+
         <%= link_to("Registration", new_user_registration_url, class: 'btn btn-danger') %>
-      </button>
+
+      <% end %>
       </div>
+      </div>
+      <div class="col-md-12">
+          <div class="text-center">
+        <h1><%= link_to('Date That Tune', root_url, class: 'text-danger') %></h1>
+            <%= yield %>
+          </div>
       </div>
     </div>
     </div>
